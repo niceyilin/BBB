@@ -1,0 +1,129 @@
+
+helloworld.o:     file format elf32-littlearm
+
+
+Disassembly of section .text:
+
+00000000 <main>:
+   0:	b580      	push	{r7, lr}
+   2:	b082      	sub	sp, #8
+   4:	af00      	add	r7, sp, #0
+   6:	6078      	str	r0, [r7, #4]
+   8:	6039      	str	r1, [r7, #0]
+   a:	f240 0000 	movw	r0, #0
+   e:	f2c0 0000 	movt	r0, #0
+  12:	f240 0100 	movw	r1, #0
+  16:	f2c0 0100 	movt	r1, #0
+  1a:	f7ff fffe 	bl	0 <_ZStlsISt11char_traitsIcEERSt13basic_ostreamIcT_ES5_PKc>
+  1e:	4603      	mov	r3, r0
+  20:	4618      	mov	r0, r3
+  22:	f240 0100 	movw	r1, #0
+  26:	f2c0 0100 	movt	r1, #0
+  2a:	f7ff fffe 	bl	0 <_ZNSolsEPFRSoS_E>
+  2e:	f04f 0300 	mov.w	r3, #0
+  32:	4618      	mov	r0, r3
+  34:	f107 0708 	add.w	r7, r7, #8
+  38:	46bd      	mov	sp, r7
+  3a:	bd80      	pop	{r7, pc}
+
+0000003c <_Z41__static_initialization_and_destruction_0ii>:
+  3c:	b580      	push	{r7, lr}
+  3e:	b082      	sub	sp, #8
+  40:	af00      	add	r7, sp, #0
+  42:	6078      	str	r0, [r7, #4]
+  44:	6039      	str	r1, [r7, #0]
+  46:	687b      	ldr	r3, [r7, #4]
+  48:	2b01      	cmp	r3, #1
+  4a:	d119      	bne.n	80 <_Z41__static_initialization_and_destruction_0ii+0x44>
+  4c:	683a      	ldr	r2, [r7, #0]
+  4e:	f64f 73ff 	movw	r3, #65535	; 0xffff
+  52:	429a      	cmp	r2, r3
+  54:	d114      	bne.n	80 <_Z41__static_initialization_and_destruction_0ii+0x44>
+  56:	f240 0000 	movw	r0, #0
+  5a:	f2c0 0000 	movt	r0, #0
+  5e:	f7ff fffe 	bl	0 <_ZNSt8ios_base4InitC1Ev>
+  62:	f240 0300 	movw	r3, #0
+  66:	f2c0 0300 	movt	r3, #0
+  6a:	f240 0000 	movw	r0, #0
+  6e:	f2c0 0000 	movt	r0, #0
+  72:	4619      	mov	r1, r3
+  74:	f240 0200 	movw	r2, #0
+  78:	f2c0 0200 	movt	r2, #0
+  7c:	f7ff fffe 	bl	0 <__aeabi_atexit>
+  80:	f107 0708 	add.w	r7, r7, #8
+  84:	46bd      	mov	sp, r7
+  86:	bd80      	pop	{r7, pc}
+
+00000088 <_GLOBAL__sub_I_main>:
+  88:	b580      	push	{r7, lr}
+  8a:	af00      	add	r7, sp, #0
+  8c:	f04f 0001 	mov.w	r0, #1
+  90:	f64f 71ff 	movw	r1, #65535	; 0xffff
+  94:	f7ff ffd2 	bl	3c <_Z41__static_initialization_and_destruction_0ii>
+  98:	bd80      	pop	{r7, pc}
+  9a:	bf00      	nop
+
+Disassembly of section .bss:
+
+00000000 <_ZStL8__ioinit>:
+   0:	00000000 	andeq	r0, r0, r0
+
+Disassembly of section .rodata:
+
+00000000 <.LC0>:
+   0:	6c6c6548 	cfstr64vs	mvdx6, [ip], #-288	; 0xfffffee0
+   4:	6f57206f 	svcvs	0x0057206f
+   8:	00646c72 	rsbeq	r6, r4, r2, ror ip
+
+Disassembly of section .ARM.extab:
+
+00000000 <.ARM.extab>:
+   0:	81019701 	tsthi	r1, r1, lsl #14
+   4:	8408b0b0 	strhi	fp, [r8], #-176	; 0xb0
+   8:	00000000 	andeq	r0, r0, r0
+
+Disassembly of section .ARM.exidx:
+
+00000000 <.ARM.exidx>:
+	...
+   8:	0000003c 	andeq	r0, r0, ip, lsr r0
+   c:	00000001 	andeq	r0, r0, r1
+  10:	00000088 	andeq	r0, r0, r8, lsl #1
+  14:	00000001 	andeq	r0, r0, r1
+
+Disassembly of section .init_array:
+
+00000000 <.init_array>:
+   0:	00000000 	andeq	r0, r0, r0
+
+Disassembly of section .comment:
+
+00000000 <.comment>:
+   0:	43434700 	movtmi	r4, #14080	; 0x3700
+   4:	4428203a 	strtmi	r2, [r8], #-58	; 0x3a
+   8:	61696265 	cmnvs	r9, r5, ror #4
+   c:	2e34206e 	cdpcs	0, 3, cr2, cr4, cr14, {3}
+  10:	2d332e36 	ldccs	14, cr2, [r3, #-216]!	; 0xffffff28
+  14:	20293431 	eorcs	r3, r9, r1, lsr r4
+  18:	2e362e34 	mrccs	14, 1, r2, cr6, cr4, {1}
+  1c:	Address 0x0000001c is out of bounds.
+
+
+Disassembly of section .ARM.attributes:
+
+00000000 <.ARM.attributes>:
+   0:	00003441 	andeq	r3, r0, r1, asr #8
+   4:	61656100 	cmnvs	r5, r0, lsl #2
+   8:	01006962 	tsteq	r0, r2, ror #18
+   c:	0000002a 	andeq	r0, r0, sl, lsr #32
+  10:	412d3705 	teqmi	sp, r5, lsl #14
+  14:	070a0600 	streq	r0, [sl, -r0, lsl #12]
+  18:	09010841 	stmdbeq	r1, {r0, r6, fp}
+  1c:	12040a02 	andne	r0, r4, #8192	; 0x2000
+  20:	15011404 	strne	r1, [r1, #-1028]	; 0x404
+  24:	18031701 	stmdane	r3, {r0, r8, r9, sl, ip}
+  28:	1a011901 	bne	46434 <_GLOBAL__sub_I_main+0x463ac>
+  2c:	1c031b02 	stcne	11, cr1, [r3], {2}
+  30:	2c061e01 	stccs	14, cr1, [r6], {1}
+  34:	Address 0x00000034 is out of bounds.
+
